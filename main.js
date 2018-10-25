@@ -63,14 +63,14 @@ function addModalCloseHandler(){
 
 function getImgUrl(jqueryElement) {
   const url = jqueryElement.css('background-image');
-  return url.match(/\/images\/[\w-]+.jpg/)[0];
+  return url.match(/images\/[\w-]+.jpg/)[0];
 }
 
 function displayImage(){
   $('#galleryModal').modal('show');
   //find the url of the image by grabbing the background-image source, store it in a variable
 	//grab the direct url of the image by getting rid of the other pieces you don't need
-  let imgUrl = './'+ getImgUrl($(this));
+  let imgUrl = getImgUrl($(this));
 	//grab the name from the file url, ie the part without the path.  so "images/pexels-photo-132037.jpeg" would become
 		// pexels-photo-132037
 		//take a look at the lastIndexOf method
